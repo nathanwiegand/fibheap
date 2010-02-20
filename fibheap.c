@@ -30,13 +30,13 @@ struct FibHeapElement {
 
 struct pFibHeapElement {
   FibHeapElement elem;
-	pFibHeapElement *parent;	
-	pFibHeapElement *children;	
-	pFibHeapElement *next;	
-	pFibHeapElement *prev;	
-	bool mark;
-	unsigned int degree;
-} ppFibHeapElement;
+  pFibHeapElement *parent;	
+  pFibHeapElement *children;	
+  pFibHeapElement *next;	
+  pFibHeapElement *prev;	
+  bool mark;
+  unsigned int degree;
+};
 
 static void Cut(FibHeap*, pFibHeapElement*, pFibHeapElement*);
 static void CascadingCut(FibHeap*, pFibHeapElement*);
@@ -163,6 +163,9 @@ FibHeapElement* FibHeapExtractMin(FibHeap *heap) {
 }
 
 void FibHeapConsolidate(FibHeap *heap) {
+  /* Is 200 enough?  Is it too much?  Should it be a vector so I don't have to
+  *  worry about it?
+  */
   pFibHeapElement *A[200];
   pFibHeapElement *w;
   unsigned int i;
