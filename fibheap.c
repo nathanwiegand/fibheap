@@ -23,17 +23,17 @@ struct FibHeap {
 };
 
 struct FibHeapElement {
-	Object value;
-	double key;		
+  Object value;
+  double key;
 };
 
 
 struct pFibHeapElement {
   FibHeapElement elem;
-  pFibHeapElement *parent;	
-  pFibHeapElement *children;	
-  pFibHeapElement *next;	
-  pFibHeapElement *prev;	
+  pFibHeapElement *parent;
+  pFibHeapElement *children;
+  pFibHeapElement *next;
+  pFibHeapElement *prev;
   bool mark;
   unsigned int degree;
 };
